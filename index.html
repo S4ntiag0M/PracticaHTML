@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .avatar{
+            width: 60px;
+            border-radius: 30px;
+       
+        }
+        .avatar2{
+            width: 60px;
+            border-radius: 30px;
+        }
+        .msm1{
+            background-color: green;
+            color: white;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin-left: 4px;
+         
+        }
+        .msm2{
+            background-color: purple;
+            color: white;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin-left: 4px;
+        }
+
+        .user1{
+            display: flex;
+        }
+        .user2{
+            display: flex;
+           margin-left: 25%;
+     
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="cont"></div>
+        
+        <div style="display: flex; justify-content: space-around;">
+
+            <div>
+                <input type="text" id="men1">
+                <button onclick="msmU1()">Enviar mensaje</button>
+            </div>
+    
+            <div>
+                <input type="text" id="men2">
+                <button onclick="msmU2()">Enviar mensaje 2</button>
+            </div>
+
+        </div>
+
+        
+        
+
+ 
+
+    <script>
+
+        var conten = document.getElementById('cont')
+       
+
+        console.log(conten.outerHTML)
+
+
+
+        function msmU1 (){
+
+            var contAct = conten.outerHTML
+            var texto = document.getElementById('men1').value
+        
+
+            conten.innerHTML=`${contAct}<div class="user1">
+
+                    <div>
+                    <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHrcb6CjjlCSdFVlm0Cxch2m4ojruxMq4ytg&usqp=CAU" alt="">
+                    </div>
+                    <div class="msm1">
+                    <span>${texto}</span><br>
+                    <span>09:25</span>
+                    </div>
+
+                </div>`
+                document.getElementById('men1').value=""
+
+        }
+
+        function msmU2 (){
+            var contAct = conten.outerHTML
+            var texto = document.getElementById('men2').value
+
+        conten.innerHTML=`${contAct}
+          <div class="user2">
+
+        <div>
+            <img class="avatar2" src="https://thumbs.dreamstime.com/b/cara-asustadiza-del-monstruo-de-la-historieta-cuadrado-avatar-zombi-verde-halloween-vector-dise%C3%B1o-conjunto-110122632.jpg" alt="">
+        </div>
+        <div class="msm2">
+            <span>${texto}</span><br>
+            <span>09:30</span>
+        </div>
+        
+
+        </div>`
+        document.getElementById('men2').value=""
+}
+
+
+    </script>
+
+
+</body>
+</html>
